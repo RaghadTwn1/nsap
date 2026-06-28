@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>نِصاب – زكاة الذهب</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+
+<style>
+
+*, *::before, *::after{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+:root{
+
+--gold:#C9A84C;
+--gold2:#E8C96A;
+
+--bg:#F8F6F2;
+--bg2:#F3EEE6;
+
+--card:#FFFFFF;
+
+--text:#2D2A26;
+
+--muted:#7A736A;
+
+--line:#E9E2D8;
+
+--green:#2ECC71;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Cairo',sans-serif;
+
+background:linear-gradient(135deg,var(--bg),var(--bg2));
+
+color:var(--text);
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+/* ================= NAV ================= */
+
+nav{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+z-index:100;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px 48px;
+
+background:rgba(255,255,255,.82);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(201,168,76,.15);
+
+box-shadow:0 10px 25px rgba(0,0,0,.04);
+
+}
+
+.nav-logo{
+
+font-size:1.8rem;
+
+font-weight:900;
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+letter-spacing:.5px;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:32px;
+
+align-items:center;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+font-size:.95rem;
+
+font-weight:700;
+
+color:var(--muted);
+
+transition:.25s;
+
+}
+
+.nav-links a:hover{
+
+color:var(--gold);
+
+}
+
+.btn-nav{
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+color:white !important;
+
+padding:11px 24px;
+
+border-radius:10px;
+
+font-weight:800;
+
+box-shadow:0 10px 24px rgba(201,168,76,.22);
+
+transition:.3s;
+
+}
+
+.btn-nav:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 14px 30px rgba(201,168,76,.32);
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:120px 24px 80px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:'';
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+ellipse 70% 60%
+
+at 50% 40%,
+
+rgba(201,168,76,.12),
+
+transparent 70%);
+
+pointer-events:none;
+
+}/* ===== الدوائر الذهبية ===== */
+
+.orb{
+
+position:absolute;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(201,168,76,.18),
+transparent 70%);
+
+pointer-events:none;
+
+animation:float 8s ease-in-out infinite;
+
+}
+
+.orb1{
+
+width:320px;
+
+height:320px;
+
+top:8%;
+
+left:-90px;
+
+animation-delay:0s;
+
+}
+
+.orb2{
+
+width:220px;
+
+height:220px;
+
+bottom:12%;
+
+right:-60px;
+
+animation-delay:2s;
+
+}
+
+.orb3{
+
+width:150px;
+
+height:150px;
+
+top:55%;
+
+left:28%;
+
+animation-delay:4s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-22px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===== البادج ===== */
+
+.hero-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:8px 18px;
+
+background:rgba(201,168,76,.12);
+
+border:1px solid rgba(201,168,76,.25);
+
+border-radius:50px;
+
+font-size:.85rem;
+
+font-weight:700;
+
+color:var(--gold);
+
+margin-bottom:28px;
+
+backdrop-filter:blur(10px);
+
+}
+
+.hero-badge span{
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:var(--gold);
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+50%{
+
+transform:scale(1.5);
+
+opacity:.45;
+
+}
+
+}
+
+/* ===== العنوان ===== */
+
+.hero h1{
+
+font-size:clamp(2.9rem,7vw,5.5rem);
+
+font-weight:900;
+
+line-height:1.15;
+
+margin-bottom:18px;
+
+color:var(--text);
+
+}
+
+.hero h1 .gold-word{
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+/* ===== الوصف ===== */
+
+.hero p{
+
+max-width:620px;
+
+font-size:1.08rem;
+
+line-height:2;
+
+color:var(--muted);
+
+margin-bottom:42px;
+
+}
+
+/* ===== الأزرار ===== */
+
+.hero-cta{
+
+display:flex;
+
+gap:16px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+color:white;
+
+padding:16px 42px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:1rem;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 12px 30px rgba(201,168,76,.25);
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 18px 36px rgba(201,168,76,.35);
+
+}
+
+.btn-secondary{
+
+background:white;
+
+border:1px solid var(--line);
+
+color:var(--text);
+
+padding:16px 42px;
+
+border-radius:12px;
+
+font-size:1rem;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+border-color:var(--gold);
+
+transform:translateY(-3px);
+
+background:#fffdf8;
+
+}/* ================= STATS ================= */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:0;
+
+flex-wrap:wrap;
+
+margin-top:70px;
+
+width:100%;
+
+max-width:760px;
+
+background:rgba(255,255,255,.82);
+
+backdrop-filter:blur(20px);
+
+border:1px solid var(--line);
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 18px 45px rgba(0,0,0,.05);
+
+}
+
+.stat{
+
+flex:1;
+
+min-width:180px;
+
+padding:30px 24px;
+
+text-align:center;
+
+border-left:1px solid var(--line);
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.stat:last-child{
+
+border-left:none;
+
+}
+
+.stat:hover{
+
+background:#FFFDF8;
+
+}
+
+.stat-num{
+
+font-size:2.1rem;
+
+font-weight:900;
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:6px;
+
+}
+
+.stat-label{
+
+font-size:.88rem;
+
+font-weight:700;
+
+color:var(--muted);
+
+}
+
+/* ================= FEATURES ================= */
+
+.section{
+
+padding:100px 24px;
+
+max-width:1150px;
+
+margin:auto;
+
+}
+
+.section-label{
+
+font-size:.82rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:var(--gold);
+
+margin-bottom:14px;
+
+}
+
+.section-title{
+
+font-size:clamp(2rem,5vw,3rem);
+
+font-weight:900;
+
+line-height:1.3;
+
+margin-bottom:60px;
+
+color:var(--text);
+
+}
+
+.section-title span{
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.features-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:26px;
+
+}
+
+.feature-card{
+
+background:rgba(255,255,255,.85);
+
+backdrop-filter:blur(20px);
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+padding:32px;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:0 15px 35px rgba(0,0,0,.04);
+
+}
+
+.feature-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-60px;
+
+left:-60px;
+
+width:130px;
+
+height:130px;
+
+background:radial-gradient(circle,
+rgba(201,168,76,.12),
+transparent);
+
+transition:.5s;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 25px 50px rgba(0,0,0,.08);
+
+border-color:rgba(201,168,76,.3);
+
+}
+
+.feature-card:hover::before{
+
+transform:scale(1.3);
+
+}
+
+.feature-icon{
+
+width:60px;
+
+height:60px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:16px;
+
+background:linear-gradient(135deg,#FFF8E7,#FFF1C9);
+
+font-size:1.6rem;
+
+margin-bottom:22px;
+
+}
+
+.feature-card h3{
+
+font-size:1.15rem;
+
+font-weight:800;
+
+margin-bottom:12px;
+
+color:var(--text);
+
+}
+
+.feature-card p{
+
+font-size:.95rem;
+
+line-height:1.9;
+
+color:var(--muted);
+
+}/* ================= HOW IT WORKS ================= */
+
+.how{
+
+background:linear-gradient(180deg,#FCFAF6,#F6F2EA);
+
+padding:100px 24px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.how::before{
+
+content:"";
+
+position:absolute;
+
+top:-150px;
+
+right:-120px;
+
+width:350px;
+
+height:350px;
+
+background:radial-gradient(circle,
+rgba(201,168,76,.12),
+transparent 70%);
+
+pointer-events:none;
+
+animation:float 8s ease-in-out infinite;
+
+}
+
+.how-inner{
+
+max-width:950px;
+
+margin:auto;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.steps{
+
+display:flex;
+
+flex-direction:column;
+
+margin-top:55px;
+
+position:relative;
+
+}
+
+.steps::before{
+
+content:"";
+
+position:absolute;
+
+right:25px;
+
+top:20px;
+
+bottom:20px;
+
+width:3px;
+
+border-radius:20px;
+
+background:linear-gradient(
+
+to bottom,
+
+var(--gold),
+
+rgba(201,168,76,.15)
+
+);
+
+}
+
+.step{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:26px;
+
+padding:32px 0;
+
+position:relative;
+
+transition:.35s;
+
+}
+
+.step:hover{
+
+transform:translateX(-8px);
+
+}
+
+.step-num{
+
+min-width:54px;
+
+height:54px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:1.1rem;
+
+font-weight:900;
+
+color:white;
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+box-shadow:0 10px 25px rgba(201,168,76,.25);
+
+position:relative;
+
+z-index:5;
+
+}
+
+.step-content{
+
+background:white;
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+padding:22px 24px;
+
+flex:1;
+
+transition:.35s;
+
+box-shadow:0 12px 30px rgba(0,0,0,.04);
+
+}
+
+.step-content:hover{
+
+border-color:rgba(201,168,76,.35);
+
+box-shadow:0 18px 35px rgba(0,0,0,.08);
+
+}
+
+.step-content h3{
+
+font-size:1.15rem;
+
+font-weight:800;
+
+margin-bottom:8px;
+
+color:var(--text);
+
+}
+
+.step-content p{
+
+font-size:.95rem;
+
+line-height:1.9;
+
+color:var(--muted);
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+padding:40px 20px;
+
+text-align:center;
+
+font-size:.9rem;
+
+color:var(--muted);
+
+background:#ffffff;
+
+border-top:1px solid var(--line);
+
+}
+
+footer span{
+
+font-weight:900;
+
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+nav{
+
+padding:15px 22px;
+
+}
+
+.nav-links{
+
+gap:18px;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.nav-links{
+
+display:none;
+
+}
+
+.stats{
+
+flex-direction:column;
+
+}
+
+.stat{
+
+border-left:none;
+
+border-bottom:1px solid var(--line);
+
+}
+
+.stat:last-child{
+
+border-bottom:none;
+
+}
+
+.hero{
+
+padding-top:150px;
+
+}
+
+.hero-cta{
+
+flex-direction:column;
+
+width:100%;
+
+max-width:330px;
+
+}
+
+.btn-primary,
+
+.btn-secondary{
+
+width:100%;
+
+}
+
+}</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="nav-logo">
+
+نِصاب
+
+</div>
+
+<div class="nav-links">
+
+<a href="#">الرئيسية</a>
+
+<a href="#features">المميزات</a>
+
+<a href="#how">كيف يعمل</a>
+
+<a href="#">المحلات المرتبطة</a>
+
+<a href="#">الحاسبة</a>
+
+<a href="#">المساعد الذكي</a>
+
+<a href="#" class="btn-nav"
+
+onclick="window.location='2login.html'">
+
+ابدئي الآن
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="orb orb1"></div>
+
+<div class="orb orb2"></div>
+
+<div class="orb orb3"></div>
+
+<div class="hero-badge">
+
+<span></span>
+
+منصة ذكية لإدارة زكاة الذهب
+
+</div>
+
+<h1>
+
+زكاة ذهبك
+
+<br>
+
+<span class="gold-word">
+
+بدون تعقيد
+
+</span>
+
+</h1>
+
+<p>
+
+نِصاب تجمع جميع مشتريات الذهب في مكان واحد،
+
+وتحسب الزكاة تلقائياً،
+
+وترسل لك تنبيهاً عند اكتمال الحول،
+
+مع إمكانية متابعة جميع مقتنياتك بكل سهولة.
+
+</p>
+
+<div class="hero-cta">
+
+<button class="btn-primary"
+
+onclick="window.location.href='2login.html'">
+
+ابدئي الآن
+
+</button>
+
+<button class="btn-secondary"
+
+onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
+
+كيف يعمل؟
+
+</button>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="stat-num">
+
++٢٠٠
+
+</div>
+
+<div class="stat-label">
+
+محل ذهب مرتبط
+
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-num">
+
+٨٥غ
+
+</div>
+
+<div class="stat-label">
+
+نصاب الذهب
+
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-num">
+
+٢.٥٪
+
+</div>
+
+<div class="stat-label">
+
+نسبة الزكاة
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="section"
+
+id="features">
+
+<div class="section-label">
+
+المميزات
+
+</div>
+
+<div class="section-title">
+
+كل ما تحتاجينه في
+
+<br>
+
+<span>
+
+مكان واحد
+
+</span>
+
+</div>
+
+<div class="features-grid"><div class="feature-card">
+
+<div class="feature-icon">
+
+🏪
+
+</div>
+
+<h3>
+
+ربط تلقائي مع المحلات
+
+</h3>
+
+<p>
+
+أي قطعة ذهب يتم شراؤها من أحد المحلات المرتبطة
+تُضاف مباشرة إلى حسابك باستخدام رقم الجوال،
+بدون الحاجة لإدخال البيانات يدوياً.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+⚖️
+
+</div>
+
+<h3>
+
+حساب الزكاة تلقائياً
+
+</h3>
+
+<p>
+
+يقوم نِصاب بحساب إجمالي الذهب،
+ومعرفة بلوغ النصاب،
+وحساب مقدار الزكاة حسب سعر الذهب الحالي.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🔔
+
+</div>
+
+<h3>
+
+تنبيهات اكتمال الحول
+
+</h3>
+
+<p>
+
+يصلك إشعار تلقائي عند اكتمال الحول
+حتى لا تنسي موعد إخراج زكاة الذهب.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🤖
+
+</div>
+
+<h3>
+
+المساعد الذكي
+
+</h3>
+
+<p>
+
+اسألي أي سؤال عن زكاة الذهب،
+وسيجيبك المساعد الذكي
+بإجابات مبنية على المصادر الشرعية.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+📸
+
+</div>
+
+<h3>
+
+قراءة الفواتير
+
+</h3>
+
+<p>
+
+ارفعي صورة فاتورة قديمة،
+وسيستخرج النظام الوزن والعيار
+وتاريخ الشراء تلقائياً.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+💛
+
+</div>
+
+<h3>
+
+إخراج الزكاة بسهولة
+
+</h3>
+
+<p>
+
+بعد حساب الزكاة يمكنك معرفة
+المبلغ المستحق وإخراجه
+بكل سهولة من خلال المنصة.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how"
+
+id="how">
+
+<div class="how-inner">
+
+<div class="section-label">
+
+كيف يعمل
+
+</div>
+
+<div class="section-title">
+
+من الشراء إلى
+
+<br>
+
+<span>
+
+إخراج الزكاة
+
+</span>
+
+</div>
+
+<div class="steps"><div class="step">
+
+<div class="step-num">
+
+١
+
+</div>
+
+<div class="step-content">
+
+<h3>
+
+سجّلي برقم جوالك
+
+</h3>
+
+<p>
+
+أنشئي حسابك باستخدام رقم الجوال،
+ليكون هو المعرّف الموحد لجميع مشتريات الذهب
+من المحلات المرتبطة.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-num">
+
+٢
+
+</div>
+
+<div class="step-content">
+
+<h3>
+
+اشتري من أي محل مرتبط
+
+</h3>
+
+<p>
+
+بمجرد إتمام عملية الشراء،
+تُسجل القطعة تلقائياً في حسابك
+مع الوزن والعيار وتاريخ الشراء.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-num">
+
+٣
+
+</div>
+
+<div class="step-content">
+
+<h3>
+
+تابعي جميع مقتنياتك
+
+</h3>
+
+<p>
+
+شاهدي جميع قطع الذهب الخاصة بك
+في لوحة واحدة،
+مع إجمالي الوزن وقيمة الذهب الحالية.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-num">
+
+٤
+
+</div>
+
+<div class="step-content">
+
+<h3>
+
+استلمي تنبيه الزكاة
+
+</h3>
+
+<p>
+
+عند اكتمال الحول،
+يقوم نِصاب بحساب مقدار الزكاة
+ويرسل لك تنبيهاً لإخراجها في موعدها.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+صُنع بـ 💛 لخدمة زكاة الذهب
+
+&nbsp; | &nbsp;
+
+<span>
+
+نِصاب
+
+</span>
+
+&nbsp; | &nbsp;
+
+ابداعثون القصيم ٢٠٢6
+
+</footer>
+
+<script>
+
+/* عداد الإحصائيات */
+
+const stats=document.querySelectorAll('.stat-num');
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+const target=entry.target;
+
+const value=target.innerText;
+
+if(value.includes("+")){
+
+let i=0;
+
+const end=200;
+
+const timer=setInterval(()=>{
+
+i+=4;
+
+target.innerText="+"+i;
+
+if(i>=end){
+
+target.innerText="+٢٠٠";
+
+clearInterval(timer);
+
+}
+
+},20);
+
+}
+
+}
+
+});
+
+});
+
+stats.forEach(stat=>observer.observe(stat));
+
+/* ظهور الكروت */
+
+const cards=document.querySelectorAll('.feature-card,.step');
+
+const reveal=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+},{threshold:.15});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(40px)";
+
+card.style.transition=".7s";
+
+reveal.observe(card);
+
+});
+
+/* تغيير شكل الناف بار عند النزول */
+
+window.addEventListener("scroll",()=>{
+
+const nav=document.querySelector("nav");
+
+if(window.scrollY>40){
+
+nav.style.padding="14px 42px";
+
+nav.style.boxShadow="0 15px 35px rgba(0,0,0,.08)";
+
+}else{
+
+nav.style.padding="18px 48px";
+
+nav.style.boxShadow="0 10px 25px rgba(0,0,0,.05)";
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
